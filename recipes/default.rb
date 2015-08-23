@@ -1,6 +1,10 @@
-homebrewalt_tap "railwaycat/emacsmacport"
+# railway's isn't working right now
 
-package "emacs-mac"
+# homebrewalt_tap "railwaycat/emacsmacport"
+# package "emacs-mac"
+
+# using default homebrew
+package "emacs"
 
 execute "Turn off Mac keybind 'Control-Command-D'" do
   action :run
