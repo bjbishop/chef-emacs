@@ -1,4 +1,4 @@
-homebrewalt_cask "railwaycat/emacsmacport"
+homebrewalt_tap "railwaycat/emacsmacport"
 
 package "emacs-mac"
 
