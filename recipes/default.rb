@@ -11,3 +11,5 @@ execute "Turn off Mac keybind 'Control-Command-D'" do
   command "defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 70 '<dict><key>enabled</key><false/></dict>'"
   user node['current_user']
 end
+
+Chef::Log.info "#{cookbook_name}: A reboot is needed for the Mac keybind to take effect."
