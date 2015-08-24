@@ -14,7 +14,7 @@ execute "Turn off Mac keybind 'Control-Command-D'" do
   user node['current_user']
 end
 
-Chef::Log.info "#{cookbook_name}: A reboot is needed for the Mac keybind to take effect."
+Chef::Log.warn "#{cookbook_name}: A reboot is needed for the Mac keybind to take effect.\n\n"
 
 passwd = ::File.readlines(::File.join(::Dir.home(node['current_user']), '.box'))[1].chomp
 
