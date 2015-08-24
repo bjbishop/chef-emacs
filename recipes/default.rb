@@ -32,5 +32,4 @@ duplicity_restore "Restore folder .emacs.d into ~/.emacs.d" do
     "--no-print-statistics",
     "--numeric-owner",
   ]
-  not_if { ::Dir.exists?(::File.join(::Dir.home(node["current_user"]), ".emacs.d")) }
 end
