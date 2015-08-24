@@ -20,7 +20,7 @@ passwd = ::File.readlines(::File.join(::Dir.home(node['current_user']), '.box'))
 
 duplicity_restore "Restore folder .emacs.d into ~/.emacs.d" do
   restore_item ".emacs.d"
-  local_path File.join(::Dir.home(node["current_user"]), ".emacs.d")
+  local_path ::File.join(::Dir.home(node["current_user"]), ".emacs.d")
   remote_path node["duplicity"]["webdav_remote"]
   restore_as_user node['current_user']
   restore_as_group node['current_user']
@@ -32,4 +32,5 @@ duplicity_restore "Restore folder .emacs.d into ~/.emacs.d" do
     "--no-print-statistics",
     "--numeric-owner",
   ]
+  not_if { ::Dir.exists?(::File.join(::Dir.home(node["current_user"]), ".emacs.d")) }
 end
