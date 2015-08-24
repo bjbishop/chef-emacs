@@ -1,4 +1,4 @@
-include_recipe "chef-duplicity::default"
+include_recipe "duplicity::default"
 
 # railway's isn't working right now
 
